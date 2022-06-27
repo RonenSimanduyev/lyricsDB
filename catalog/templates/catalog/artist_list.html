@@ -1,0 +1,8 @@
+{% extends 'main.html' %} {% block content %} {% for artist in artists %}
+<div class="artist-item">
+  <a href="{% url 'artist_one' artist.id %}">
+    <img src="{{artist.imageUrl}}" />
+    <h2>{{artist.name}}</h2>
+  </a>
+</div>
+{% endfor %} {% endblock %}

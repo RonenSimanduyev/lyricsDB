@@ -1,0 +1,22 @@
+{% extends 'main.html' %} {% block content %}
+<div class="artist-item">
+  <img src="{{artist.imageUrl}}" />
+  <h2>{{artist.name}}</h2>
+</div>
+<div class="song-container">
+  {% for song in artist.song_set.all %}
+  <div class="card">
+    <a href="{% url 'song' song.id %}">
+      <img
+        src="{{song.imageUrl}}"
+        class="card-img-top"
+        style="width: 250px; height: 400px"
+      />
+      <div class="card-body">
+        <h5 class="card-title">{{song.title}}</h5>
+      </div>
+    </a>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends 'main.html' %} {% block content %}
+<h1>Add Song</h1>
+<form action="" method="post">
+  {% csrf_token %}
+  <div class="mb-3">
+    <select class="form-select" name="artist">
+      {% for artist in artists %}
+      <option value="{{artist.id}}">{{artist.name}}</option>
+      {% endfor %}
+    </select>
+  </div>
+  <div class="mb-3">
+    <label for="" class="form-label">Song Title</label>
+    <input type="text" class="form-control" name="title" placeholder="Title" />
+  </div>
+  <div class="mb-3">
+    <label for="" class="form-label">Image</label>
+    <input
+      type="text"
+      class="form-control"
+      name="imageUrl"
+      placeholder="Image"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="" class="form-label">Lyrics</label>
+    <textarea class="form-control" id="" rows="3" name="lyrics"></textarea>
+  </div>
+  <input type="submit" class="btn btn-primary" value="הוספה" />
+</form>
+{% endblock %}

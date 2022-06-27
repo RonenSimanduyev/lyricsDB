@@ -1,0 +1,12 @@
+{% extends 'main.html' %} {% block content %}
+<div class="artist-item">
+  <img src="{{song.imageUrl}}" />
+  <h2>{{song.title}}</h2>
+</div>
+<div class="card border-dark mb-3">
+  <div class="card-body text-dark" style="direction: rtl; text-align: right">
+    <p class="card-text">{{song.lyrics|linebreaks}}</p>
+  </div>
+</div>
+
+{% endblock %}
